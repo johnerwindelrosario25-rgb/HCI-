@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIGA GRILL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="landing">
+        
+        <h1 class="brand-title top-title">GIGA</h1>
+        
+        <div id="burger-container">
+            <img id="main-burger" src="images/burgir.png" alt="Giga Burger">
+            <div class="burger-half top"></div>
+            <div class="burger-half bottom"></div>
+        </div>
+        
+        <h1 class="brand-title bottom-title">GRILL</h1>
+        
+        <div class="side-images">
+            <img src="images/chicken.png" alt="Chicken" class="chicken-img">
+            <img src="images/barbeque.png" alt="Barbeque" class="bbq-img">
+        </div>
+        
+        <p class="click-hint">Click anywhere to continue</p>
+    </div>
+    
+    <div id="menu-container" class="hidden">
+        <header class="menu-header">
+            <div class="search-bar">
+                <i class="fas fa-bars menu-icon"></i>
+                <input type="text" placeholder="Search product" class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            <div class="header-icons">
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <span class="cart-count hidden">0</span>
+                </div>
+                <div class="notification-icon-container">
+                    <i class="fas fa-bell bell-icon"></i>
+                    <span class="notification-count hidden">0</span>
+                </div>
+                <i class="fas fa-sign-out-alt logout-icon"></i>
+            </div>
+        </header>
+        
+        <main class="menu-grid">
+            <div class="food-card" data-name="Grilled Chicken" data-price="150" data-img="product image/grilled_chick.jpg" data-hover="hover image/inasal.jpg">
+                <img class="product-img default" src="product image/grilled_chick.jpg" alt="Grilled Chicken">
+                <img class="product-img hover" src="hover image/inasal.jpg" alt="Grilled Chicken Hover">
+                <div class="card-label">Grilled Chicken</div>
+            </div>
+            
+            <div class="food-card" data-name="Grilled Barbecue" data-price="180" data-img="product image/grilled_barb.jpg" data-hover="hover image/pork bbq.jpg">
+                <img class="product-img default" src="product image/grilled_barb.jpg" alt="Grilled Barbecue">
+                <img class="product-img hover" src="hover image/pork bbq.jpg" alt="Grilled Barbecue Hover">
+                <div class="card-label">Grilled Barbecue</div>
+            </div>
+            
+            <div class="food-card" data-name="Burger" data-price="120" data-img="product image/burgir.png" data-hover="hover image/burgur.jpg">
+                <img class="product-img default" src="product image/burg.jpg" alt="Burger">
+                <img class="product-img hover" src="hover image/burgur.jpg" alt="Burger Hover">
+                <div class="card-label">Burger</div>
+            </div>
+            
+            <div class="food-card" data-name="Shrimp" data-price="200" data-img="product image/shrimp.jpg" data-hover="hover image/shrimppp.jpg">
+                <img class="product-img default" src="product image/shrimp.jpg" alt="Shrimp">
+                <img class="product-img hover" src="hover image/shrimppp.jpg" alt="Shrimp Hover">
+                <div class="card-label">Shrimp</div>
+            </div>
+            
+            <div class="food-card" data-name="Fries" data-price="80" data-img="product image/fries.jpg" data-hover="hover image/friess.jpg">
+                <img class="product-img default" src="product image/fries.jpg" alt="Fries">
+                <img class="product-img hover" src="hover image/friess.jpg" alt="Fries Hover">
+                <div class="card-label">Fries</div>
+            </div>
+            
+            <div class="food-card" data-name="Isaw" data-price="50" data-img="product image/isaw.jpg" data-hover="hover image/isawww.jpg">
+                <img class="product-img default" src="product image/isaw.jpg" alt="Isaw">
+                <img class="product-img hover" src="hover image/isawww.jpg" alt="Isaw Hover">
+                <div class="card-label">Isaw</div>
+            </div>
+        </main>
+    </div>
+    
+    <div id="product-modal" class="hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <img class="modal-img" src="" alt="">
+            <div class="modal-body-content">
+                <h2 class="modal-name"></h2>
+                <div class="modal-quantity">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-value">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+                <p class="modal-price">Price: ₱<span class="price-value">0</span></p>
+                <div class="modal-buttons">
+                    <button class="modal-cancel-btn">Cancel</button>
+                    <button class="modal-add-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="cart-modal" class="hidden">
+        <div class="cart-overlay"></div>
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h2 class="cart-title">Your Cart</h2>
+                <button class="cart-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="cart-items"></div>
+            
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span class="cart-total-label">Total:</span>
+                    <span class="cart-total-price">₱0</span>
+                </div>
+                <div class="cart-buttons">
+                    <button class="cart-clear-btn">Clear Cart</button>
+                    <button class="cart-checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="receipt-modal" class="hidden">
+        <div class="receipt-background">
+            <div class="receipt-panel">
+                <div class="receipt-header">
+                    <h1 class="receipt-title">GIGA GRILL</h1>
+                    <p class="receipt-subtitle">Official Receipt</p>
+                </div>
+                
+                <div class="receipt-divider"></div>
+                
+                <div class="receipt-details">
+                    <div class="receipt-item">
+                        <span class="receipt-label">Date:</span>
+                        <span class="receipt-value" id="receipt-date"></span>
+                    </div>
+                    <div class="receipt-item">
+                        <span class="receipt-label">Time:</span>
+                        <span class="receipt-value" id="receipt-time"></span>
+                    </div>
+                    <div class="receipt-item">
+                        <span class="receipt-label">Order #:</span>
+                        <span class="receipt-value" id="receipt-order-number"></span>
+                    </div>
+                </div>
+                
+                <div class="receipt-divider"></div>
+                
+                <div class="receipt-items"></div>
+                
+                <div class="receipt-divider"></div>
+                
+                <div class="receipt-total">
+                    <span class="total-label">TOTAL:</span>
+                    <span class="total-price" id="receipt-total"></span>
+                </div>
+                
+                <div class="receipt-thankyou">
+                    <p>Thank you for ordering!</p>
+                    <p>Enjoy your meal!</p>
+                </div>
+                
+                <button class="receipt-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <div id="notification-modal" class="hidden">
+        <div class="notification-overlay"></div>
+        <div class="notification-panel">
+            <div class="notification-header">
+                <h2 class="notification-title">Order Notifications</h2>
+                <button class="notification-close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="notification-items"></div>
+            <button class="notification-clear-btn">Clear All</button>
+        </div>
+    </div>
+    
+    <div id="logout-modal" class="hidden">
+        <div class="logout-overlay"></div>
+        <div class="logout-panel">
+            <div class="logout-icon-container">
+                <i class="fas fa-sign-out-alt"></i>
+            </div>
+            <h2 class="logout-title">Log Out?</h2>
+            <p class="logout-message">Are you sure you want to log out?</p>
+            <div class="logout-buttons">
+                <button class="logout-cancel-btn">Cancel</button>
+                <button class="logout-confirm-btn">Log Out</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
